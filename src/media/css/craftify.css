@@ -1,0 +1,8 @@
+body {
+  font: normal 18px arial,helvetica,"liberation sans","dejavu sans condensed",sans-serif
+  line-height: 25px
+}
+
+p, ul, ol, dl, blockquote, pre {
+margin: 0 0 25px;
+}
