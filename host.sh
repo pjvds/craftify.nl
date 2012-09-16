@@ -1,2 +1,2 @@
 #!/bin/sh
-python ./tools/hyde/hyde.py -g -w -s ./src -d ./deploy
+python ./tools/hyde/hyde.py -w -s ./src -d ./deploy
