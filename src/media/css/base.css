@@ -9,6 +9,14 @@ header, section, footer {
     width: 36.em
 }
 
+header {
+    float: left;
+}
+
+header, nav, section, article, aside, footer {
+	display: block;
+}
+
 p, ul, ol, dl, blockquote, pre {
     margin: 0 1em 1em 0;
 }
@@ -23,7 +31,7 @@ ul { margin: 0; }
 }
 
 #site {
-    margin: 0 auto;
+    margin: 0.5em auto;
     width: 36em;
     position: relative;
 }
@@ -31,10 +39,9 @@ ul { margin: 0; }
 #header {
     padding: 0;
     margin: 0;
-    margin-left:-0.5em;
-    margin-bottom: .5em;
-    font-size: 2em;
+    margin-top: 1.0em;
     text-align:center;
+    float: left;
 }
 
 #header a {
@@ -48,31 +55,12 @@ ul { margin: 0; }
     margin: 0;
 }
 
-.context-nav,
-ul.breadcrumbs {
-    list-style-type: none;
-    padding: 0;
-    position: absolute;
-}
 
 .context-nav { right:0; }
 
-.breadcrumbs li { display: inline; }
-.breadcrumbs a {
-    text-decoration: none;
-    color: #4D6680;
-}
-
-.context-nav a {
-    color: #4D6680;
-}
-
-.breadcrumbs a:hover { text-decoration: underline; }
-.breadcrumbs .separator { color: #4f6072; }
-
 #sitenav {
+    float: right;
     text-align: center;
-    border-bottom: .2em solid #4d6680;
     padding-bottom: 0.2em;
 }
 
@@ -86,8 +74,6 @@ ul.breadcrumbs {
 #sitenav a {
     text-decoration: none;
     padding: 0.2em;
-    background-color: #b5cce3;
-    color: #4d6680;
 }
 
 #sitenav .selected a {
@@ -99,9 +85,12 @@ ul.breadcrumbs {
     padding-bottom:.5em;
 }
 
-#content-header h1{
-    border-bottom: 1px dotted #4d6680;
-    margin-bottom:.5em;
+.group::after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
 }
 
 .post-date{
