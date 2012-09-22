@@ -9,6 +9,27 @@ header, nav, section, article, aside, footer {
 	display: block;
 }
 
+header {
+	position: absolute;
+	width: 27%;
+	min-width: 15em;
+}
+
+#stream {
+	position: relative;
+	padding-left: 3.125em;
+	padding-top: 3.125em;
+	margin-left: 27%;
+	min-width: 41em;
+	border-left: 1px solid #E3E3E3;
+}
+
+article p ,
+article h2,
+article h3 {
+	max-width: 30em;
+}
+
 p, ul, ol, dl, blockquote, pre {
     margin: 0 1em 1em 0;
 }
