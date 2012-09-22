@@ -46,17 +46,27 @@
 	</head>
 
 	<body>
-
-		<div id="site">	
-
-			{% include "skeleton/_header.html" %}
-
-			{% block content %}{% endblock %}
-
-			{% include "skeleton/_footer.html" %}
-
-		</div>
-
+		 <header>
+			 <a href="{{site.url}}/index.html">
+				 {{site.name}}
+			 </a>
+		 </header>
+		 <nav id="sitenav">
+			 <ul>
+				 </li>
+				 {% for module in site.children %}
+					 <li{% ifequal page.module module %} class="selected" {% endifequal %}>
+						 <a href="{{module.listing_url}}">
+							 {{module.name|unslugify}}
+						 </a>
+					 </li>
+				 {% endfor %}
+			 </ul>
+		 </nav>
+		 <aside id="stream">
+		 	{% block content %}{% endblock %}
+		 </aside>
+		 <footer id='footer'>Copyright {{site.name}}</footer>
 	</body>
 
 </html>
