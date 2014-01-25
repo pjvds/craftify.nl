@@ -18,19 +18,6 @@ $(document).ready(function() {
 	if( p === 'iPad' || p === 'iPhone' || p === 'iPod' ){
 		iOS = true;
 	}
-
-
-	// Scroll effect on Home Page photo
-	if(iOS == false){
-		var div = $('#home-photo');
-				$(window).on('scroll', function() {
-				   var st = $(this).scrollTop();
-				   div.css({ 'bottom' : (st*1.5) });
-				   div.css({ 'right' : ((st*2)) });
-				   var srotate = "rotate(" + ((st/1.8)) + "deg)";
-				   $("#home-photo").css({"-moz-transform" : srotate, "-webkit-transform" : srotate});
-				});
-	}
 	
 	
 	//Contact Form Code:
