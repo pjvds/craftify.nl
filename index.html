@@ -400,17 +400,6 @@
 			</p>
 
 		</div>
-		<div class="element contact">
-	     	<input type="hidden" class="order" value="19">
-		    <small>
-			Latest from my Twitter.
-			</small>
-			<h2 class="title">Twitter
-			</h2>
-			<blockquote class="twitter-content">
-			</blockquote>
-			<a href="http://www.twitter.com/envato" class="btn btn-primary">@twitter_account <i class="icon-twitter"></i></a>
-		</div>
 
 	    <!-- Extra non-categorized -->
 	    <div class="element">
@@ -434,7 +423,7 @@
 		<!-- Footer -->
 		<div class="container container-footer">
 	    <div class="element footer">
-		    <span class="copyright-text">Copyright &copy; 2013 All Me VCard</span>
+		    <span class="copyright-text">Copyright &copy; 2014 Craftify</span>
 		    <ul class="social">
 		    	<li><a href="#" class="btn btn-primary"><i class="foundicon-rss"></i></a></li>
 		        <li><a href="#" class="btn btn-primary"><i class="foundicon-facebook"></i></a></li>
@@ -579,7 +568,7 @@
          });
 	         
 	     /* Latest Twitter */
-	     $.getJSON("https://api.twitter.com/1/statuses/user_timeline/envato.json?count=1&amp;include_rts=1&amp;callback=?", function(data) {
+	     $.getJSON("https://api.twitter.com/1/statuses/user_timeline/pjvds.json?count=1&amp;include_rts=1&amp;callback=?", function(data) {
 	    	 var text_full = data[0].text;
 	    	 if(text_full.length > 70){
 	    		 text_full = text_full.substr(0,70) + "...";
