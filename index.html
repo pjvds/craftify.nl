@@ -1,438 +1,348 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>All Me</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        
-		<link rel="icon" type="image/png" href="img/favicon.png">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/social_foundicons.css">
-        <link rel="stylesheet" href="css/isotope.css">
-        <link rel="stylesheet" href="css/main.css">
 
-		<!-- fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Sanchez:400italic' rel='stylesheet' type='text/css'>
-        <!--[if lt IE 9]>
-            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="index.html">Craftify - software development craftsmanship</a>
-                </div>
-            </div>
-        </div>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js no-touch" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
 
-	<!-- Ajax Content Load -->
-	  <div class="container container-top">
-		  <div id="container-ajax" class="element">
-		  		<a href="#" class="close-ajax"><span class="x-button">&#10006;</span></a>
-		  		<div class="ajax-content"></div>
-		  </div>
-	  </div>
-	  <input type="hidden" class="last-scroll" value="0">
-	<!-- Main elements -->	
-	  <div id="container-isotope" class="super-list variable-sizes clearfix">
-	      
-	    <!-- Name and Image-->
-<!-- 	    <div class="element primary-bg height2">
-	    	<input type="hidden" class="order" value="0">
-			<h1 class="main-name">Pieter Joost van de Sande
-			</h1>
-			<img src="img/self.png" class="full" alt="profile image">
-			<hr class="thick" />
-	    </div> -->
-	    
-	    <!-- About -->
-	    <div class="element about width2 height2">
-	    	<input type="hidden" class="order" value="2">
-	    	<small>
-			Nice to meet you.
-			</small>
-			<h2 class="title">About Me
-			</h2>
-			<p>My name is <strong>Pieter Joost van de Sande</strong> and I am a <strong>software development craftsman</strong> with an impressive track record that can help you, your team and project to accelerate.
-			</p>
-			<p>I regularly present at conferences like Microsoft TechDays, SDC and NDC. I'm a one of the founders of Devnology where I help to organise meetings and run a podcast. My role in the community is recognised by Microsoft who awarded me with the exclusive Microsoft MVP award.</p>
-			<p>I contribute to many open source projects. As you can see at my Github profile, the contributions are not bound to a specific programming language or platform. I like to explore different languages and paradigms. I count C# as one of worlds most beautiful programming languages, and I am in love with Google's Go. I prefer staticly typed languages in most situations, but you also find me writing Javascript, Python, some Ruby and Smalltalk.</p>
-			<p>To clear my head and recharge my batteries I run barefoot.</p>
-	    </div>
-	    
-	    <div class="element about width2 height2">
-	     	<input type="hidden" class="order" value="8">
-	    	<small>
-			What I can do for you.
-			</small>
-			<h2 class="title">Skills
-			</h2>
-			<strong class="dark">Programming</strong>
-			<div class="progress">
-			  <div class="bar" style="width: 99%"></div>
-			</div>
-			<strong class="dark">Architecture</strong>
-			<div class="progress">
-			  <div class="bar" style="width: 99%"></div>
-			</div>
-			<strong class="dark">Continuous Delivery</strong>
-			<div class="progress">
-			  <div class="bar" style="width: 85%"></div>
-			</div>
-			<strong class="dark">Agile / Scrum</strong>
-			<div class="progress">
-			  <div class="bar" style="width: 85%"></div>
-			</div>
-			<strong class="dark">Project Management</strong>
-			<div class="progress">
-			  <div class="bar" style="width: 75%"></div>
-			</div>
-			<strong class="dark">Communication</strong>
-			<div class="progress">
-			  <div class="bar" style="width: 90%"></div>
-			</div>
-			<strong class="dark">Legacy Systems</strong>
-			<div class="progress">
-			  <div class="bar" style="width: 90%"></div>
-			</div>
-	    </div>  
-	    
-	    <div class="element about height3 width3">
-	     	<input type="hidden" class="order" value="11">
-	    	<small>
-			Where I've worked.
-			</small>
-			<h2 class="title">Employment
-			</h2>
-			<table class="table">
-				<tr>
-					<th class="no-wrap">2014 - Present
-					</th>
-					<td><h4 class="primary-color">Software Craftsman
-						<br/><small>Happypancake AB</small>
-						</h4>
-						<p>Rewriting the largest dating site of Sweden in Go.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<th class="no-wrap">2008 - Present
-					</th>
-					<td><h4 class="primary-color">Vice Chairman
-						<br/><small>Devnology</small>
-						</h4>
-						<p>Creating awesome opportunities for the Dutch software development community to exchange knowledge and experience.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<th class="no-wrap">2013 - 2014
-					</th>
-					<td><h4 class="primary-color">Community manager and engineer
-						<br/><small>Wercker</small>
-						</h4>
-						<p>Driving business success through active community engagement by building ongoing and permanent relationships, content marketing and delivering world-class support.
-						</p>
+  <!-- Set the viewport width to device width for mobile -->
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+  
+
+  <title>Adept vCard</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+  <link rel="stylesheet" href="stylesheets/tooltipster.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <!--[if IE 8]>
+<link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+<![endif]-->
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+	<a id="home-nav"></a>
+	<div class="navi" data-magellan-expedition>
+						<ul >
+						  <li data-magellan-arrival='home' class="hasatip" data-width="210" title="Home"><a href="#home-nav" class="scroll"><i class="icon-home"></i></a></li>
+						  <li data-magellan-arrival='profile' class="hasatip" data-width="210" title="Profile"><a href="#profile-nav" class="scroll"><i class="icon-user"></i></a></li>
+						  <li data-magellan-arrival='resume' class="hasatip" data-width="210" title="Resume"><a href="#resume-nav" class="scroll"><i class="icon-reorder"></i></a></li>
+						  <li data-magellan-arrival='projects' class="hasatip" data-width="210" title="Projects"><a href="#projects-nav" class="scroll"><i class="icon-eye-open" ></i></a></li>
+						  <li data-magellan-arrival='contact' class="hasatip" data-width="210" title="Contact"><a href="#contact-nav" class="scroll"><i class="icon-envelope"></i></a></li>						  
+						</ul>
+    				</div>
+  <div class="row">
+    <div class="twelve columns" id="main-container">
+
+    	<section class="row" id="home">
+    
+    			<div class="five columns home-left">
+    				<div id="home-photo"></div>
+    			</div>
+    			
+    			<div class="seven columns home-right">
+    				<div id="home-text">
+						<div id="home-social-container">
+							<ul id="home-social">
+								<li><a target="_blank" href="//twitter.com/pjvds"><i class="icon-twitter"></i></a></li>
+								<li><a target="_blank" href="//github.com/pjvds"><i class="icon-github"></i></a></li>
+								<li><a target="_blank" href="//nl.linkedin.com/in/pjvds/"><i class="icon-linkedin"></i></a></li>
+							</ul>
+						</div>
+    					<h3 class="bold" >PIETER JOOST VAN DE SANDE</h3>
+    					<h4 >Software Development Craftsman</h4>
+    					<hr class="highlight-hr" />
+    					<h5 class="text-left"><i class="icon-envelope">&nbsp;</i>pj@craftify.nl</h5>
+    					<h5 class="text-left"><i class="icon-phone">&nbsp;</i>(+31) 6 54 22 44 89</h5>
+    				</div>
+    				
+    			</div>
+    		
+    		
+    	</section><!-- end of Home -->
+    	  
+		 	
+    	<a id="profile-nav">&nbsp;</a>
+    	<section class="row page" id="profile" data-magellan-destination='profile'>
+    	
+    		<div class="twelve columns">
+    			<h5 class="page-heading">PROFILE</h5>
+    			<hr />
+    		</div>
+    		
+    		<div class="twelve columns">
+    		
+    			<div class="six columns">
+    				<h4>
+    					I’m a profecional software development craftsman with an impressive track record that can help you, your team and project to accelerate!
+    				</h4>
+    				<hr />
+    				<p>
+                        I provide my services to a number of companies across Europe and have done it for some time. It ranges from VC backed startups to the largest corporations in the world. I do not limited myself to a single language, platform, paradigm or process, but rather explore the differences between them.
     				</p>
-					</td>
-				</tr>
-				<tr>
-					<th class="no-wrap">2009 - 2013
-					</th>
-					<td><h4 class="primary-color">Principal Consultant Microsoft
-						<br/><small>Atos</small>
-						</h4>
-						<p>Helping top Fortune 500 companies to succeed with software development within the Microsoft area.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<th class="no-wrap">2007 - 2011
-					</th>
-					<td><h4 class="primary-color">Boardmember
-						<br/><small>dotNed</small>
-						</h4>
-						<p>Organising meetups on monthly bases for the Dutch .NET community.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<th class="no-wrap">2007 - 2009
-					</th>
-					<td><h4 class="primary-color">Software developer and speaker
-						<br/><small>Sogyo</small>
-						</h4>
-						<p>Successfully delivering multiple software development projects.
-						</p>
-					</td>
-				</tr>
-				<tr>
-					<th class="no-wrap">2004 - 2007
-					</th>
-					<td><h4 class="primary-color">Software developer
-						<br/><small>Max</small>
-						</h4>
-						<p>Creating worlds most inteligent workforce scheduling system. 	
-						</p>
-					</td>
-				</tr>
-			</table>
-	    </div>  
-	    
-	    <!-- Portfolio Items -->
-	    
-	    <a href="skype:pjvandesande?call" class="element element-portfolio portfolio">
-	    	<input type="hidden" class="order" value="7">
-	    	<img src="img/skype.png" class="portfolio-image" alt="skype logo"/>
-			<span class="portfolio-title"><i class="icon-play"></i>Call me on Skype
-			</span>
-	    </a>
+    			</div>
+    			
+    			<div class="six columns">
+    			
+					<ul id="skill">
+						<li><span class="bar graphic-design"></span><h5>Graphic Design</h5></li>
+						<li><span class="bar html-css"></span><h5>HTML & CSS</h5></li>
+						<li><span class="bar jquery"></span><h5>Drupal</h5></li>
+						<li><span class="bar wordpress"></span><h5>Wordpress</h5></li>
+					</ul>
+    			
+    			</div>
+    		</div>
+    		
+    	</section><!-- end of Profile -->
+    	
+    	
+    	<section class="row page" id="featured-project">
+    	
+    		<div class="twelve columns">
+    			<h5 class="page-heading">LATEST FEATURED WORK</h5>
+    			<hr />
+    		</div>
+    		
+    		<div class="twelve columns">
+    			
 
-	    <a href="https://twitter.com/pjvds" class="element element-portfolio portfolio">
-	     	<input type="hidden" class="order" value="5">
-	    	<img src="img/twitter.jpg" class="portfolio-image" alt="twitter logo"/>
-			<span class="portfolio-title"><i class="icon-play"></i>Follow me on Twitter
-			</span>
-	    </a>
+    				<div id="featured">
+					  <img alt="featured image" src="images/wercker.png" />
+					</div>
+	
+    		</div>
+    		
+    		<div class="twelve columns">
+    		
+    			<div class="eight columns featured-project-description">
+    				<div class="emphasise-title">
+    					<h6>Community Manager and Engineer</h6>
+    					<h5 class="highlight-color">Wercker</h5>
+    				</div>
+    				<p>
+                        I joined wercker on the moment when they just became one of the first Dutch startups to have <a href="http://techcrunch.com/2013/01/23/wercker-makes-code-delivery-easy-gets-seed-funding-from-shamrock-ventures-greylock-venture-partners-and-a-list-technologists/">raised capital from U.S. from top-tier VCs</a>. They hired me to help growing their business and guide them through a period of rapid growth, from a handful of customers, to thousands of active customers in just a few months. I also was an important counterpartner for the CTO to help solving deep technical challenges and helped the CEO to accelerate growth.  I still think a lot about this time and look back with proud.
+    				</p>
+    			</div>
+    			
+    			<div class="four columns">
+    				<div class="featured-project-details">
+    					<h6><i class="icon-group">&nbsp;</i>Client:</h6>
+    					<span>Wercker</span>
+    					<h6><i class="icon-calendar">&nbsp;</i>Year:</h6>
+    					<span>2013 - 2014</span>
+    					<h6><i class="icon-money">&nbsp;</i>Type:</h6>
+    					<span>venture-backed startup</span>
+    				</div>
+    			</div>
+    		</div>
+    	
+    	</section><!-- end of Featured Project -->
+    	
+    	<section class="row page" id="projects">
+    	
+    		<div class="twelve columns">
+    			<h5 class="page-heading">PAST PROJECTS</h5>
+    			<hr />
+    		</div>
+    	
+    		<div class="twelve columns project-row">
+    		
+    			<div class="six columns project-item">
+                    <div class="project-img-wrap" data-width="210">
+                        <img  alt="project cover image" src="images/rabobank-logo.png" />
+                    </div>
+    				<div class="project-details">
+    					<h5 class="bold">Software Risk Assessment</h5>
+    					<h6 class="thick highlight-color">Rabobank International</h6>
+    					<p>
+    						Rabobank hired me to assess the risks the quality of multiple software projects. I combined the results of deep technical analysis with information about the systems and business context. This lead to recommendations in the form of an actionable, measurable roadmap, showing the path towards a situation with mitigated risks and lower costs.
+    					</p>
+    				</div>
+    			</div>
+    			
+    			<div class="six columns">
+                    <div class="project-img-wrap">
+                        <img  alt="project cover image" src="images/robeco-logo.png" />
+                    </div>
+    				<div class="project-details">
+    					<h5 class="bold">Software Architect</h5>
+    					<h6 class="thick highlight-color">Robeco</h6>
+    					<p>
+                            Robeco is a large asset management. They hired me to help with different projects, including the development of a next generation enterprise data management platform with Cadis. I worked in an Agile team of enthousiastic people with minimum overhead and direct customer contact. I enjoyed every minute of it!
+    					</p>
+    				</div>
+    			</div>
+    		</div>
+    		
+    		<div class="twelve columns project-row">
+    		
+    			<div class="six columns project-item">
+					<div class="project-img-wrap">
+						<img  alt="project cover image" src="images/vanbrug-logo.png" />
+					</div>
+    				<div class="project-details">
+    					<h5 class="bold">Software Architect and Team Lead</h5>
+    					<h6 class="thick highlight-color">Van Brug</h6>
+    					<p>
+    						Van Brug provides a software solution for the Notary. After 10 years of development they decided to start the development of a new major version. They hired me to help the start the development for this version. I helped them to create a new architecture and helped the team to implement the first pieces.
+    					</p>
+    				</div>
+    			</div>
+    		</div>
+    	
+    	
+    	</section><!-- end of Projects -->
+    	
+        <section class="row divider text-center">
+            <h1 class="icon-comment"></i><br />
+            <h3>
+                Pieter Joost is a brilliant developer with excellent and current skills. He has proven himself to be a fast paced and to-the-point addition to various projects. It has always been a thrill working together with Pieter Joost.
+            </h3>
+            <h4><em>- Martijn Bronkhorst, Senior PFE at Microsoft</em></h4>
+        </section>
+    	
+    	<section class="row divider text-center">
+    			<h1 class="icon-comment"></i><br />
+    			<h3>
+    				Pieter Joost has proven to have great knowledge of building software and was capable of learning quickly in a branche he wasn't familiar with. He was easy to work with and always prepared to take that extra step. He was worth every euro I spend on him.
+    			</h3>
+    			<h4><em>- Robert Heinen, CEO Van Brug Software</em></h4>
+    	</section>
 
-	   	<a href="https://www.linkedin.com/in/pjvds" class="element element-portfolio portfolio">
-	     	<input type="hidden" class="order" value="6">
-	    	<img src="img/linkedin.png" class="portfolio-image" alt="twitter logo"/>
-			<span class="portfolio-title"><i class="icon-play"></i>See my LinkedIn profile
-			</span>
-	    </a>
-	    
-	    <!-- Contact -->
-		<div class="element contact">
-	     	<input type="hidden" class="order" value="1">
-	    	<small>
-			Personal details.
-			</small>
-			<h2 class="title">Info
-			</h2>
-			<table class="table">
-				<tr>
-					<th>Name:
-					</th>
-					<td>Pieter Joost van de Sande
-					</td>
-				</tr>
-				<tr>
-					<th>Phone:
-					</th>
-					<td>(+31) 6 54 22 44 89
-					</td>
-				</tr>
-				<tr>
-					<th>Email:
-					</th>
-					<td>pj@craftify.nl
-					</td>
-				</tr>
-			</table>
-			<hr/>	
-	    </div>
-	    
-	    <div class="element contact">
-	     	<input type="hidden" class="order" value="3">
-		    <small>
-			Work Address
-			</small>
-			<h2 class="title">Office
-			</h2>
-			<p>
-			<strong>Craftify</strong><br>
-			Rozemarijn 41<br/>
-			8252CV Dronten
-			The Netherlands
-			</p>
-		</div>
+        <section class="row divider text-center">
+            <h1 class="icon-comment"></i><br />
+            <h3>
+                Working with Pieter Joost is an enervating experience. His enthusiasm for software development in it’s broadest sense and his (literally) endless energy work very contagious. This combined with his broad knowledge of software technologies, development processes and his visions on the usage of ICT made him a very useful addition to our team.
+            </h3>
+            <h4><em>- Arno den Uijl, Architect at ABN AMRO</em></h4>
+        </section>
+    	
+    	
+    	<a id="contact-nav"></a>
 
-	    <!-- Extra non-categorized -->
-	    <div class="element">
-	     	<input type="hidden" class="order" value="9">
-		    <p class="big-text dark text-no-transform text-cursive">I promise to deliver <span class="primary-color ">innovation</span>, <span class="primary-color ">creativity</span>, and <span class="primary-color ">success</span>.
-		    </p>
-	    </div>
-	    
-	    <div class="element">
-	     	<input type="hidden" class="order" value="20">
-			<blockquote>Working with Pieter Joost is an enervating experience!
-				<small>Arno den Uijl, Architect at ABN AMRO</small>
-			</blockquote>
-			<blockquote>He was worth every euro I spend on him.
-    			<small>Robert Heinen, CEO Van Brug</small>
-			</blockquote>
-		</div>
+    	
+    	<section class="row page" id="contact">
+    	
+    		<div class="twelve columns">
+    			<h5 class="page-heading">CONTACT</h5>
+    			<hr />
+    		</div>
+    	
+    		<div class="twelve columns">
+    		
+    			<div class="five columns" id="contact-left">
+    				<div id="contact-icon">
+    					<i class="icon-bullhorn"></i>
+    				</div>
+    				<h4>I am available for short-term contract and freelance work, so go on... hire me!</h4>
+    				<hr />
+    				<ul>
+    					<li><span class="label contact-detail"><i class="icon-phone">&nbsp;</i>(+31) 6 54 22 44 89</span></li>
+    					<li><span class="label contact-detail"><i class="icon-envelope">&nbsp;</i>pj@craftify.nl</span></li>
+    					<li><span class="label contact-detail"><i class="icon-map-marker">&nbsp;</i>Dronten, The Netherlands</span></li>
+    					<li><span class="label contact-detail"><a href="//twitter.com/pjvds"><i class="icon-twitter">&nbsp;</i>@pjvds</span></a></li>
 
-		<div class="element">
-	     	<input type="hidden" class="order" value="21">
-			<blockquote>Pieter-Joost has an energetic personality which inspires me to do the things I like most! 
-				<small>Jaap Taal, Q42</small>
-			</blockquote>
-			<blockquote>It has always been a thrill working together with Pieter Joost.
-    			<small>Martijn Bronkhorst, Senior Consultant at Microsoft</small>
-			</blockquote>
-		</div>
+    				</ul>
+    				
+    			</div>
+    			
+    			<div class="seven columns">
+    				<span class="label contact-detail right"><i class="icon-envelope-alt">&nbsp;</i>Send me a message:</span>
+    				<div id="form-sent" class="hide left">	
+					  	<div class="alert-box success"><i class="icon-thumbs-up">&nbsp;</i>Message sent: Thankyou for your enquiry</div>
+					  </div>
+    				<form id="contact-form">
+					  <input id="form-name" type="text" placeholder="Name" />
+					  <input id="form-email"  type="text" placeholder="Email Address" />
+					  <textarea id="form-msg"  placeholder="Message"></textarea>
+					  <div id="details-error-wrap"  class="hide">	
+					  	<div class="alert-box alert error-box"><i class=" icon-exclamation-sign">&nbsp;</i>Error: Please ensure all fields are filled in correctly</div>
+					  </div>	
+					  <input id="form-security" type="text" placeholder="7 + 1 = ?" />
+					  <div id="security-error-wrap"  class="hide">	
+					  	<div class="alert-box alert error-box"><i class=" icon-exclamation-sign">&nbsp;</i>Error: Security question is incorrect</div>
+					  </div>	
+					  <input type="submit" class="form-button button right" />
+					  
+					</form>
+					
+    			</div>
+    			
+    		</div>
+    		
+    	</section><!-- end of Contact -->
+    	
+    	<div id="project1" class="project-single reveal-modal expand">
+    	    
+    	    <div id="project-1-slideshow" class="project-single-slideshow">
+    	        <img alt="project image" src="http://placehold.it/730x470" />
+    	    	<img alt="project image" src="http://placehold.it/730x470" />
+			</div>
 
+			<div class="twelve columns">
+    		
+    			<div class="eight columns featured-project-description">
+    				<div class="emphasise-title">
+    					<h6>Branding & Identity</h6>
+    					<h5 class="highlight-color">The Featured Project Title</h5>
+    				</div>
+    				<p>
+    					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    				</p>
+    			</div>
+    			
+    			<div class="four columns">
+    				<div class="featured-project-details">
+    					<h6><i class="icon-group">&nbsp;</i>Client:</h6>
+    					<span>The Important Client Co.</span>
+    					<h6><i class="icon-calendar">&nbsp;</i>Date:</h6>
+    					<span>November 2013</span>
+    					<h6><i class="icon-money">&nbsp;</i>Budget:</h6>
+    					<span>$3.5m</span>
+    				
+    		</div>
 
-	    
-		</div> <!-- #container -->
-		
-		<!-- Footer -->
-		<div class="container container-footer">
-	    <div class="element footer">
-		    <span class="copyright-text">Copyright &copy; 2014 Craftify</span>
-		    <div class="clearboth"></div>
-	    </div>
-	    </div>
-        <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    	</div>
+    	
+  	  </div><!-- end Project 1 -->   
+  	
+  	</div>
+  </div><!-- end of Main Container -->
+  
 
-        <script src="js/vendor/bootstrap.min.js"></script>
-		<script src="js/vendor/jquery.isotope.min.js"></script>
-        <script src="js/main.js"></script>
-
-        <script>
-        
-        /* 
-         * Ajax link click (mainly for portfolio items but any content can be linked to) 
-         */
-         
-	     $('.ajax').click(function(e){
-	    	 e.preventDefault();
-	    	 var page = $(this).attr('href');
-	    	 $('.container-footer').fadeOut(199);
-			 $('.last-scroll').val($(document).scrollTop());	//current scroll posn to return to later
-			 $('html').append('<img src="img/loading.gif" class="load-gif" style="z-index: 999"/>');
-			 $('.load-gif').css({
-			        position:'absolute',
-			        left: ($(window).width() - $('.load-gif').outerWidth())/2,
-			        top: ($(window).height() - $('.load-gif').outerHeight())/2
-			    });
-	    	 $('#container-isotope').fadeOut(200, function(){
-	    	 $.get(page, function(data) {
-	    		  $('.load-gif').remove();
-	    		  $('.ajax-content').html(data);
-	    		  $('#container-isotope').stop().hide();
-	    		  $('.container-footer').fadeIn(599);
-	    		  $('#container-ajax').fadeIn(600, function(){
-	    			  $('.close-ajax').show();
-	    		  });
-	    		  window.scrollTo(0,0);
-	    		}); 
-	    	 });
-	     });
-	  
-	     $('.close-ajax').click(function(e){
-	    	e.preventDefault(); 
-	    	$(this).hide();
-	    	$('.container-footer').fadeOut(199);
-	    	$('#container-ajax').fadeOut(200,function(){
-		    	$('#container-isotope').fadeIn(600);
-		    	$('.container-footer').fadeIn(599);
-		    	window.scrollTo(0,$('.last-scroll').val());
-		    	$container.isotope();
-	    	});
-	     });
-
-        /* 
-         * Isotope functionality
-         */
-
-         var $container = $('#container-isotope');
-       
-         $container.isotope({
-           masonry: {
-             columnWidth: 250
-           },
-           getSortData: {
-             number: function( $elem ) {
-               var number = $elem.hasClass('element') ? 
-                 $elem.find('.number').text() :
-                 $elem.attr('data-number');
-               return parseInt( number, 10 );
-             },
-             sortOrder: function( $elem ) {
-            	 var number = $elem.hasClass('element') ? 
-                   $elem.find('.order').val() :
-                   $elem.attr('data-number');
-                 return parseInt( number, 10 );
-             }
-           },
-           sortBy : 'sortOrder'
-    	/* 	,filter: '.home'		uncomment this line if you want to filter items on homepage to items with class="home" */	
-         });
-         
-         var $optionSets = $('.option-set'),
-         $optionLinks = $optionSets.find('a');
-
-	     $optionLinks.click(function(){
-			$clicked   = $(this);
-			var current_select = $clicked.hasClass("selected"); 
-	       	if($('#container-ajax').css('display') != "none"){	/* close ajax container */
-	    	   $('.container-footer').fadeOut(199);
-	    	   $('#container-ajax').fadeOut(200,function(){
-	    		   if( current_select ){
-			    	   window.scrollTo(0,$('.last-scroll').val());
-			       } else {
-			       	   window.scrollTo(0,0);
-			       }
-			    	$('#container-isotope').fadeIn(600);
-			    	$('.container-footer').fadeIn(599);
-			    	$container.isotope();
-		    	});
-	       }
-	       if(!current_select) window.scrollTo(0,0);
-	       	
-	       var $this = $(this);
-	       // don't proceed if already selected
-	       if ( $this.hasClass('selected') ) {
-	         return false;
-	       }
-	       var $optionSet = $this.parents('.option-set');
-	       $optionSet.find('.selected').removeClass('selected');
-	       $this.addClass('selected');
-	 
-	       // make option object dynamically, i.e. { filter: '.my-filter-class' }
-	       var options = {},
-	           key = $optionSet.attr('data-option-key'),
-	           value = $this.attr('data-option-value');
-	       // parse 'false' as false boolean
-	       value = value === 'false' ? false : value;
-	       options[ key ] = value;
-	       if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
-	         // changes in layout modes need extra logic
-	         changeLayoutMode( $this, options )
-	       } else {
-	         // otherwise, apply new options
-	         $container.isotope( options );
-	       }
-	       
-	       return false;
-	     });
-	     
-	     $(window).load(function(){
-        	$container.isotope(); 
-         });
-
-        </script>
-    </body>
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+  <script src="javascripts/scripts.js"></script>
+  <script src="javascripts/jquery.tooltipster.js"></script>
+    <script>
+    $(window).load(function(){
+      $("#featured").orbit({
+      	directionalNav: false,
+      });
+      
+      $("#project-1-slideshow").orbit({
+      	directionalNav: false,
+      });
+      
+    });
+    </script> 
+  
+</body>
 </html>
