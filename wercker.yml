@@ -1,6 +1,9 @@
 box: wercker/default
 deploy:
   steps:
+    - script:
+        name: Remove git
+        code: rm -rf ./.git
     - s3sync:
         key_id: $KEY
         key_secret: $SECRET
