@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/pjvds
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://craftify.nl
+  * I am pjvds (https://keybase.io/pjvds) on keybase.
+  * I have a public key with fingerprint 6BB0 B181 063C 2DEC A5FF  D9FB B1FC D173 FE0B 87DA
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101796fa136c14739f490c9f6684f0117444d6466277adc012189d4832450dfae410a",
+            "fingerprint": "6bb0b181063c2deca5ffd9fbb1fcd173fe0b87da",
+            "host": "keybase.io",
+            "key_id": "b1fcd173fe0b87da",
+            "kid": "0101796fa136c14739f490c9f6684f0117444d6466277adc012189d4832450dfae410a",
+            "uid": "960681173d00751a75e6a586d8fdc919",
+            "username": "pjvds"
+        },
+        "service": {
+            "hostname": "craftify.nl",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1463657832,
+    "expire_in": 157680000,
+    "prev": "4ce1464f85f5fd2bc4bf77fb3d13b242c4fff2b08d732041ee2a6a0ac3e1e95f",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.53
+Comment: https://keybase.io/crypto
+
+yMIsAnicrZJbSBVBGMfP6e4hu1IEedK2jBSLmd3Z2d0DShFRRPVQgQXhaXdnRldP
+e9Zz1lNqdiENuiB5gdAuRpFIZId6iO5lhFERlQVFWXGyottD1kNUkM2KvfXYvAzz
+fb//f/7fMDfTh/sC/n1f3qcWdF+86b/b1VjhK8w/UVItGFFSKYSqhTI6uNEIoXE3
+XGYRISQACKCiYaZDCZsQKZLGkAZMjWGsIgYgVBBCBCOMRUXRiQmgCFWNIFUSkQwI
+0ymCQBfyBGbZxTTmxCzb5bbYMIABVQiwZIqEmrrMGNGYYUBmEqhIjAJDVYgnLInG
+PQUPZ+hxOt+K8ho/hAfj/YP/z7krBu00DLDKRRIBQJGhrsgU67KKicqIqUHNA+M0
+ZusbKaed0gSJCzV5Ai8lLJN6r+qNMdQ2YzpzLVY5345wnROLulEzGuGNEtd1Qp7O
+rXQ8cBM1wkMWYcOyCX9CLkjQWNyK2kIIctJ0Lc8TIixhWeHp8wS62bFiNGx5hKxg
+FfDlXUMT3BKZlLOIqTKTGRENExlMUZghESgZIhJNxBgTDaASRRIBgpSKOtaBbkoU
+Uk1mgjdUuR0VQojH1Iu5ZdwqtnW3IkaFmhvX14/w+QO+USOHeV/LF0ib8PfDhT6P
+Higum7L1edq815dz2tYemD31SvJ7r9gxa/KZ4E/jS31/wdu5mUszH/TW5azsFAPi
+uVfZmQc/ZGjO5eanVamB1SM3PEpGDgffWJO3dJ3sSO39/XDMri5/w9HHn97d6l47
+rWfWnJYLvza0tLftyr4HSu+35066eLAg2NA3sVvrydh2tXXxsT3ZH+umFzX8qm1a
+MXNx/oQnKGd565Zn/f7mltk52U13vr48fTzVMvCx40jdktLa4DU8rvbe2T4nt8e3
++2lrcPuO6wv3F7FvnenLdiazWOpY84zxRwvHrilf1ZN7p+h2//NDjT/WVWUV1HRe
++v36/KJEuu9FYyBSn5Gct2LEqGrHJqc2rv8DozlB8g==
+=Ye0Q
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/pjvds
+
+==================================================================
