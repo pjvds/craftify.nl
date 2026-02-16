@@ -1,21 +1,52 @@
-$(document).ready(function() {
+'use strict';
 
-	// Smooth Scroll to internal links
-
-	$(".scroll").click(function(event){		
+document.addEventListener('DOMContentLoaded', function() {
+	
+	// Smooth scroll to internal links (any anchor link starting with #)
+	document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+		anchor.addEventListener('click', function(event) {
+			const targetId = this.getAttribute('href');
+			
+			// Skip if href is just "#"
+			if (targetId === '#') return;
+			
+			const target = document.querySelector(targetId);
+			if (!target) return;
+			
 			event.preventDefault();
 			
-			$scroll = $(this.hash).offset().top;
-			$scroll = $scroll - 90;
-			$('html,body').animate({scrollTop:$scroll}, 500);
+			const scrollPosition = target.offsetTop - 90;
+			
+			window.scrollTo({
+				top: scrollPosition,
+				behavior: 'smooth'
+			});
 		});
+	});
 
-	// Handle hover event for the project images
-
-	$(".project-img-wrap").mouseenter(function(){
-			$(this).children('.project-hover').fadeIn(200);
-		}).mouseleave(function(){
-		  $(this).children('.project-hover').fadeOut(200);
-		});	
+	// Handle hover effect for project images
+	document.querySelectorAll('.project-img-wrap').forEach(function(wrapper) {
+		const hoverElement = wrapper.querySelector('.project-hover');
+		if (!hoverElement) return;
+		
+		wrapper.addEventListener('mouseenter', function() {
+			hoverElement.style.display = 'block';
+			hoverElement.style.opacity = '0';
+			
+			// Trigger reflow to enable transition
+			hoverElement.offsetHeight;
+			
+			hoverElement.style.transition = 'opacity 200ms ease';
+			hoverElement.style.opacity = '1';
+		});
+		
+		wrapper.addEventListener('mouseleave', function() {
+			hoverElement.style.opacity = '0';
+			
+			setTimeout(function() {
+				hoverElement.style.display = 'none';
+			}, 200);
+		});
+	});
 
 });
