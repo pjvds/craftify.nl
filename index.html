@@ -9,6 +9,27 @@
 
     <title>Pieter Joost van de Sande - Software Architect &amp; Speaker | Craftify</title>
     <meta name="description" content="Independent software architect specializing in message-based systems, CQRS, Event Sourcing, and Domain Driven Design. Microsoft MVP with expertise in Go, .NET, and Java.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craftify.nl/">
+    <meta property="og:title" content="Pieter Joost van de Sande - Software Architect &amp; Speaker">
+    <meta property="og:description" content="Independent software architect specializing in message-based systems, CQRS, Event Sourcing, and Domain Driven Design. Microsoft MVP with expertise in Go, .NET, and Java.">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pjvds">
+    <meta name="twitter:creator" content="@pjvds">
+    <meta name="twitter:title" content="Pieter Joost van de Sande - Software Architect">
+    <meta name="twitter:description" content="Independent software architect specializing in message-based systems, CQRS, Event Sourcing, and Domain Driven Design.">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
     <!-- Included CSS Files (Uncompressed) -->
     <!--
   <link rel="stylesheet" href="stylesheets/foundation.css">
@@ -20,25 +41,63 @@
     <link href="stylesheets/style.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,200&display=swap' rel='stylesheet' type='text/css'>
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pieter Joost van de Sande",
+      "jobTitle": "Software Architect",
+      "description": "Independent software architect specializing in message-based systems, CQRS, Event Sourcing, and Domain Driven Design",
+      "url": "https://craftify.nl",
+      "email": "pj@craftify.nl",
+      "telephone": "+31654224489",
+      "sameAs": [
+        "https://twitter.com/pjvds",
+        "https://github.com/pjvds",
+        "https://nl.linkedin.com/in/pjvds/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Harderwijk",
+        "addressCountry": "NL"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Craftify Holding BV",
+        "alternateName": "Pathler"
+      },
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Microsoft MVP Program",
+        "description": "Microsoft Most Valuable Professional (2007-2018)"
+      }
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Skip navigation for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <main>
     <div class="row">
         <div class="twelve columns" id="main-container">
             <section class="row" id="home">
 
-                <div class="twelve columns home-right home-left">
+                <div class="twelve columns home-right home-left" id="main-content">
                     <div id="home-text">
                         <div id="home-social-container">
                             <ul id="home-social">
                                 <li>
-                                    <a href="https://twitter.com/pjvds"><i class="icon-twitter"></i></a>
+                                    <a href="https://twitter.com/pjvds" aria-label="Twitter profile"><i class="icon-twitter" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://github.com/pjvds"><i class="icon-github"></i></a>
+                                    <a href="https://github.com/pjvds" aria-label="GitHub profile"><i class="icon-github" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://nl.linkedin.com/in/pjvds/"><i class="icon-linkedin"></i></a>
+                                    <a href="https://nl.linkedin.com/in/pjvds/" aria-label="LinkedIn profile"><i class="icon-linkedin" aria-hidden="true"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -821,22 +880,16 @@ The Microsoft Most Valuable Professional (MVP) award is a prestigious recognitio
             <!-- end of Contact -->
         </div>
     </div>
+    </main>
     <!-- end of Main Container -->
+    
+    <!-- Google Analytics (async loading) -->
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
     <script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
+        window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments); };
+        ga.l = +new Date;
         ga('create', 'UA-25546409-1', 'craftify.nl');
-        ga('require', 'displayfeatures')
+        ga('require', 'displayfeatures');
         ga('send', 'pageview');
     </script>
 
