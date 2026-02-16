@@ -31,17 +31,17 @@
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
-    <!-- Included CSS Files (Uncompressed) -->
-    <!--
-  <link rel="stylesheet" href="stylesheets/foundation.css">
-  -->
-    <!-- Included CSS Files (Compressed) -->
-    <link href="stylesheets/foundation.css" rel="stylesheet">
+    <!-- Included CSS Files -->
+    <link href="stylesheets/grid.css" rel="stylesheet">
     <link href="stylesheets/app.css" rel="stylesheet">
-    <link href="stylesheets/font-awesome.min.css" rel="stylesheet">
+    <link href="stylesheets/font-awesome.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="stylesheets/style.css" rel="stylesheet">
 
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200&display=swap' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200&display=swap' rel='stylesheet' type='text/css' media="print" onload="this.media='all'">
+    <noscript>
+        <link href="stylesheets/font-awesome.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,200&display=swap' rel='stylesheet' type='text/css'>
+    </noscript>
     
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
@@ -877,7 +877,7 @@ The Microsoft Most Valuable Professional (MVP) award is a prestigious recognitio
     </script>
 
     <!-- Custom scripts (vanilla JavaScript, no jQuery) -->
-    <script src="javascripts/scripts.js"></script>
+    <script src="javascripts/scripts.js" defer></script>
 
 </body>
 
