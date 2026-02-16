@@ -102,7 +102,30 @@ section{
 .divider{
 	background-color: var(--color-primary);
 	padding: var(--spacing-md);
-	color var(--color-white);
+	color: var(--color-white);
+}
+
+.divider blockquote, .divider .testimonial-author{
+	color: var(--color-white);
+}
+
+.divider blockquote {
+	font-size: 18px;
+	line-height: 1.4;
+	margin: 20px 0;
+	font-style: normal;
+	border: none;
+}
+
+.divider .testimonial-author {
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+.testimonial-icon {
+	font-size: 48px;
+	color: var(--color-white);
+	display: inline-block;
 }
 
 .divider h1, .divider h2, .divider h3, .divider h4{
@@ -399,18 +422,21 @@ p {
 	margin: 0px;
 }
 
-.featured-project-description h6{
+.featured-project-description .job-title{
 	font-weight: 500;
 	margin: 0px 0px 3px 0px;
 	color: var(--color-white);
+	font-size: 14px !important;
 }
 
-.featured-project-details h6:first-child{
+.featured-project-details .detail-label:first-child{
 	margin-top: 0px;	
 }
 
-.featured-project-details h6{
+.featured-project-details .detail-label{
 	font-weight: bold;
+	font-size: 14px !important;
+	margin-bottom: 5px;
 }
 
 /* Project Styles */
@@ -515,6 +541,13 @@ p {
 	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 30px;
+}
+
+.contact-tagline {
+	font-size: 18px !important;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 15px;
 }
 
 /* Media Queries */
