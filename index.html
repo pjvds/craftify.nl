@@ -13,8 +13,6 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="images/bg.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="stylesheets/grid.css" as="style">
-    <link rel="preload" href="stylesheets/style.css" as="style">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -36,10 +34,192 @@
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     
-    <!-- Included CSS Files -->
-    <link href="stylesheets/grid.css" rel="stylesheet">
+    <!-- Inlined CSS for optimal performance (eliminates render-blocking) -->
+    <style>
+/* Minimal Grid System - Replaces Foundation CSS (96% reduction) */
+*, *:before, *:after { box-sizing: border-box; }
+html { font-size: 62.5%; }
+body { background: url('images/bg.webp'); background-attachment: fixed; font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 1; color: #222; position: relative; -webkit-font-smoothing: antialiased; }
+
+/* Base Typography */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td { margin: 0; padding: 0; font-size: 14px; }
+p { font-family: inherit; font-weight: normal; font-size: 12px; line-height: 1.6; margin-bottom: 17px; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 200; color: #222; text-rendering: optimizeLegibility; line-height: 1.1; margin-bottom: 14px; margin-top: 14px; }
+h1 { font-size: 44px; }
+h2 { font-size: 37px; }
+h3 { font-size: 27px; }
+hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 22px 0 21px; height: 0; }
+em, i { font-style: italic; }
+strong, b { font-weight: bold; }
+
+/* Lists */
+ul, ol { font-size: 14px; line-height: 1.6; margin-bottom: 17px; list-style-position: outside; }
+ul.no-bullet { list-style: none; }
+
+/* Blockquotes */
+blockquote { margin: 0 0 17px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+
+/* Links */
+a img { border: none; }
+a { color: #fff; text-decoration: none; line-height: inherit; }
+
+/* Utilities */
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.hide { display: none; }
+
+/* Grid System */
+.row { width: 808px; max-width: 100%; min-width: 767px; margin: 0 auto; }
+.row:before, .row:after { content: " "; display: table; }
+.row:after { clear: both; }
+.row .row { width: auto; max-width: none; min-width: 0; margin: 0; }
+.column, .columns { float: left; min-height: 1px; padding: 0 10px; position: relative; }
+.twelve { width: 100%; }
+.eight { width: 66.66667%; }
+.four { width: 33.33333%; }
+
+/* Mobile Grid */
+@media only screen and (max-width: 767px) {
+    .row { width: auto; min-width: 0; margin-left: 0; margin-right: 0; }
+    .column, .columns { float: none; width: auto; }
+    .row .row .column, .row .row .columns { padding-left: 0; padding-right: 0; }
+}
+
+/* Forms */
+form { margin: 0 0 19.41176px; }
+label { font-size: 14px; color: #4d4d4d; cursor: pointer; display: block; font-weight: 500; margin-bottom: 3px; }
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea { background-color: white; font-family: inherit; border: 1px solid #ccc; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); color: rgba(0, 0, 0, 0.75); display: block; font-size: 14px; margin: 0 0 12px 0; padding: 6px; height: 32px; width: 100%; transition: all 0.15s linear; }
+textarea { height: auto; }
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, textarea:focus { background: #fafafa; outline: none; border-color: #b3b3b3; }
+
+/* Buttons */
+.button, button { border-style: solid; border-width: 1px; cursor: pointer; font-family: inherit; font-weight: bold; line-height: 1; margin: 0 0 1.25em; position: relative; text-decoration: none; text-align: center; display: inline-block; padding: 10px 20px; font-size: 14px; background-color: #2ba6cb; border-color: #2284a1; color: white; transition: background-color 300ms ease-out; }
+.button:hover, button:hover { background-color: #2284a1; }
+
+/* CSS Custom Properties (Variables) */
+:root { --color-primary: var(--color-primary); --color-primary-light: var(--color-primary-light); --color-white: var(--color-white); --color-gray: var(--color-gray); --color-black-overlay: rgba(0, 0, 0, 0.7); --color-shadow: rgba(0, 0, 0, 0.2); --spacing-xs: 5px; --spacing-sm: 10px; --spacing-md: 20px; --spacing-lg: 30px; --spacing-xl: 40px; --shadow-default: 0px 0px 13px 1px var(--color-shadow); --font-weight-medium: 500; --font-weight-bold: 700; --font-weight-black: 900; }
+
+/* Skip link for accessibility */
+.skip-link { position: absolute; top: -40px; left: 0; background: var(--color-primary); color: var(--color-white); padding: 8px 16px; text-decoration: none; z-index: 100; font-weight: bold; }
+.skip-link:focus { top: 0; }
+
+.bold { font-weight: bold; }
+.thick { font-weight: 500; }
+section { margin-bottom: 40px !important; }
+#home { margin-bottom: 26px !important; }
+#main-container { margin-top: 28px; }
+.page { -webkit-box-shadow: var(--shadow-default); box-shadow: var(--shadow-default); padding: 25px; background-color: var(--color-white); }
+.page a { color: var(--color-primary); text-decoration: none; }
+.page a:link { color: var(--color-primary); text-decoration: none; }
+.page a:visited { color: var(--color-primary); text-decoration: none; }
+.page a:hover { color: var(--color-primary); text-decoration: underline; }
+.page a:active { color: var(--color-primary); text-decoration: none; }
+.divider { background-color: var(--color-primary); padding: var(--spacing-md); color: var(--color-white); }
+.divider blockquote, .divider .testimonial-author { color: var(--color-white); }
+.divider blockquote { font-size: 18px; line-height: 1.4; margin: 20px 0; font-style: normal; border: none; }
+.divider .testimonial-author { font-size: 14px; margin-top: 10px; }
+.testimonial-icon { font-size: 48px; color: var(--color-white); display: inline-block; }
+.divider h1, .divider h2, .divider h3, .divider h4 { color: var(--color-white); }
+p { font-size: 16px !important; line-height: 1.2; }
+.medium-icon { font-size: 70px; color: var(--color-primary-light); }
+.highlight-color { color: var(--color-primary); }
+.page-heading { display:inline-block; border-bottom: 2px solid var(--color-primary); padding-bottom: var(--spacing-xs); font-weight: var(--font-weight-black) !important; font-size: 18px !important; }
+.highlight-hr { border: 2px solid var(--color-primary); }
+.emphasise-title { background-color: var(--color-primary); padding: var(--spacing-sm); margin-bottom: var(--spacing-md); }
+
+/* Nav Styles */
+.navi { width: 100%; position: fixed; z-index: 10; text-align: center; background-color: var(--color-primary); -webkit-box-shadow: var(--shadow-default); box-shadow: var(--shadow-default); }
+.navi ul { overflow:hidden; background-color: var(--color-primary); display:inline-block; margin-bottom: 0px; }
+.navi li:first-child { margin-left: 0px; }
+.navi li:last-child { margin-right: 0px; }
+.navi li { float:left; list-style:none; font-size: 30px; padding: 3px 10px 0px 10px; background-color: var(--color-primary); color: var(--color-white); width: 60px; margin-left: 5px; text-align: center; }
+
+/* Home Styles */
+#home-photo { height: 212px; width: 100%; background: url('http://placehold.it/300x195') no-repeat; background-size: cover; border: 10px solid var(--color-white); -webkit-box-shadow: var(--shadow-default); box-shadow: var(--shadow-default); position: relative; z-index: -1; }
+.home-right { padding-right: 0px; }
+.home-left { padding-left: 0px; }
+#home-text { width: 100%; margin: 0px auto; -webkit-box-shadow: var(--shadow-default); box-shadow: var(--shadow-default); background-color: var(--color-white); padding: 0px 20px 20px 20px; z-index: 3; }
+#home-text h1, #home-text .subtitle, #home-text .contact-info { margin-top: 0px; margin-bottom: 3px; }
+.subtitle { font-size: 1.25rem; font-weight: normal; }
+.contact-info { font-size: 1rem; margin-bottom: 0.2rem; }
+#home-social-container { text-align:right; }
+#home-social { overflow:hidden; display:inline-block; margin-bottom: 0px; }
+#home-social li { list-style: none; float: left; font-size: 18px; background-color: var(--color-primary); margin-left: var(--spacing-sm); color: var(--color-white); padding: 8px; }
+
+/* Profile Styles */
+#profile h4 { margin-bottom: 30px; }
+#skill { list-style: none; width: 100%; position: relative; line-height: 2em; padding: 22px 0px 20px 20px; overflow: hidden; }
+#skill li { margin-bottom:40px; height:22px; }
+#skill li:last-child { margin-bottom: 0px; }
+#skill li h5 { position:relative; top:-20px; font-weight: 500; }
+.progress { display: block; background: var(--color-gray); border-radius: 2px; margin: 6px 0px 20px 0px !important; padding: 0px !important; height: 10px !important; border: none !important; }
+.progress .bar { border-radius: 2px; background-color: var(--color-primary); height: 100%; float: left; font-size: 12px; color: var(--color-white); text-align: center; text-shadow: 0 -1px 0 rgba(0,0,0,0.25); background-image: none; -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15); -moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15); box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15); -webkit-box-sizing: border-box; }
+
+/* Resume Styles */
+#resume h6 { font-weight: 500; margin-top: 3px; }
+.resume-large-icon { font-size: 70px; color: var(--color-primary-light); margin-top: 80px; padding-left: 10px; }
+.timeline-section { margin-bottom: 30px; }
+.timeline-section ul { list-style: none; margin-left: 25px; }
+.timeline-section li { list-style: none; }
+.resume-title { font-weight: bold; line-height: 1.6; }
+.resume-company { font-weight: 500; line-height: 1.6; }
+.resume-entry { margin-bottom: 30px; float:right; }
+.resume-company { color: var(--color-primary); }
+.snapshot { background-color: var(--color-primary); color: var(--color-white); padding: 20px; }
+.snapshot h3, .snapshot h4 { color: var(--color-white); margin-top: 0px; }
+.snapshot-timeline { border-bottom: 4px solid var(--color-white); margin-bottom: 20px; }
+.timeline-circle { position: relative; margin-top: 0px; top: 15px; font-size: 25px; color: var(--color-white); }
+
+/* Featured Project Styles */
+.featured-project-details { background-color: var(--color-gray); padding: 15px; }
+.featured-project-description h5 { font-weight: bold; color: var(--color-white); margin: 0px; }
+.featured-project-description .job-title { font-weight: 500; margin: 0px 0px 3px 0px; color: var(--color-white); font-size: 14px !important; }
+.featured-project-details .detail-label:first-child { margin-top: 0px; }
+.featured-project-details .detail-label { font-weight: bold; font-size: 14px !important; margin-bottom: 5px; }
+
+/* Project Styles */
+.project-row { margin-bottom: 30px; }
+.project-hover { position: absolute; top:0px; left:0px; width: 94%; height: 300px; background-color: rgba(0,0,0,0.7); color: var(--color-primary); padding: 90px 15px 50px 15px; cursor: pointer; display: none; font-size: 50px; margin-left: 10px; }
+.project-hover h3 { color: var(--color-primary); }
+.project-img-wrap { min-width: 100%; margin: 0px auto; overflow: hidden; cursor: pointer; }
+.project-img-wrap img { height: 300px; max-width: 150%; }
+.project-details { background-color: var(--color-gray); padding: 10px; border-top: 4px solid var(--color-primary); position: relative; top: -3px; }
+.project-details h5 { margin-bottom: 3px; margin-top: 4px; }
+.project-details h6 { margin-top: 0px; }
+
+/* Project Single Styles */
+.project-single img { width: 100%; }
+.project-single-slideshow { margin-bottom: 20px !important; border-bottom: 3px solid var(--color-primary); }
+
+/* Contact Styles */
+#contact-left ul { margin-top: 30px; }
+#contact-left li { list-style: none; }
+.contact-detail { font-size: 20px; padding: 5px; margin-bottom: 10px; display: inline-block; }
+.contact-detail li { list-style: none; }
+.contact-detail span a { color: var(--color-white) }
+#form-msg { height: 200px; }
+#contact-icon { font-size: 80px; text-align: center; margin-top: 10px; margin-bottom: 30px; }
+.contact-tagline { font-size: 18px !important; font-weight: 500; text-align: center; margin-bottom: 15px; }
+
+/* Media Queries */
+@media only screen and (max-width: 767px) {
+    #main-container { margin-top: 24px; }
+    .navi li { font-size: 25px; width: 40px; margin-left: 10px; height: 62px; padding: 10px 10px 30px 10px; }
+    .navi li:last-child { margin-right: 25px; }
+    #featured-project { padding-bottom: 50px; }
+    .project-item { margin-bottom: 20px; }
+    #home-photo { height: 220px; width: 100%; background-size: cover; border: 10px solid var(--color-white); margin: 0px auto; right: 0px; margin-bottom: 15px; -webkit-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.2); box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.2); }
+    .page { padding: 10px; }
+    .home-text { width: 100%; }
+    .home-left { padding-left: 10px; }
+    .home-right { padding-right: 10px; }
+    .snapshot-timeline { display: none; }
+}
+    </style>
+    
+    <!-- Deferred non-critical CSS -->
     <link href="stylesheets/font-awesome.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="stylesheets/style.css" rel="stylesheet">
 
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,200&display=swap' rel='stylesheet' type='text/css' media="print" onload="this.media='all'">
     <noscript>
