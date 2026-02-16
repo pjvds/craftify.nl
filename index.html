@@ -11,6 +11,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="images/bg.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="stylesheets/grid.css" as="style">
+    <link rel="preload" href="stylesheets/style.css" as="style">
+    
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://craftify.nl/">
@@ -33,7 +38,6 @@
     
     <!-- Included CSS Files -->
     <link href="stylesheets/grid.css" rel="stylesheet">
-    <link href="stylesheets/app.css" rel="stylesheet">
     <link href="stylesheets/font-awesome.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="stylesheets/style.css" rel="stylesheet">
 
@@ -866,14 +870,20 @@ The Microsoft Most Valuable Professional (MVP) award is a prestigious recognitio
     </main>
     <!-- end of Main Container -->
     
-    <!-- Google Analytics (async loading) -->
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <!-- Google Analytics (deferred for performance) -->
     <script>
-        window.ga = window.ga || function() { (ga.q = ga.q || []).push(arguments); };
-        ga.l = +new Date;
-        ga('create', 'UA-25546409-1', 'craftify.nl');
-        ga('require', 'displayfeatures');
-        ga('send', 'pageview');
+        // Defer analytics loading until after page load
+        window.addEventListener('load', function() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-7679BC3PM9';
+            document.head.appendChild(script);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7679BC3PM9');
+        });
     </script>
 
     <!-- Custom scripts (vanilla JavaScript, no jQuery) -->
