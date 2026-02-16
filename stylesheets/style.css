@@ -216,9 +216,19 @@ p {
 	
 }
 
-#home-text h3, #home-text h4, #home-text h5{
+#home-text h1, #home-text .subtitle, #home-text .contact-info{
 	margin-top: 0px;
 	margin-bottom: 3px;
+}
+
+.subtitle {
+	font-size: 1.25rem;
+	font-weight: normal;
+}
+
+.contact-info {
+	font-size: 1rem;
+	margin-bottom: 0.2rem;
 }
 
 #home-social-container{
