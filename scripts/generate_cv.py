@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 from bs4 import BeautifulSoup
+from reportlab.graphics.shapes import Drawing, Rect
 from reportlab.lib.colors import HexColor
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
@@ -34,6 +35,7 @@ from reportlab.platypus import (
 PRIMARY = HexColor("#D63129")
 DARK = HexColor("#222222")
 GRAY = HexColor("#555555")
+TRACK = HexColor("#EEEEEE")  # unfilled portion of the skill bars
 
 # Contact details that should never end up on a public CV, even though they
 # are published on the website's contact section (chamber of commerce
@@ -259,10 +261,21 @@ def build_pdf(data: dict, output_path: Path) -> None:
                                    fontSize=8.8, leading=11, textColor=PRIMARY, spaceAfter=7)
     skill_style = ParagraphStyle("Skill", parent=styles["Normal"], fontName="Helvetica",
                                   fontSize=9.2, textColor=DARK)
-    bar_style = ParagraphStyle("Bar", parent=styles["Normal"], fontName="Helvetica",
+    pct_style = ParagraphStyle("Pct", parent=styles["Normal"], fontName="Helvetica-Bold",
                                 fontSize=8.5, textColor=PRIMARY)
 
     story = []
+
+    def skill_bar(pct, width=68 * mm, height=2.6 * mm):
+        """A crisp, vector-drawn progress bar (avoids relying on font glyph
+        support for Unicode block characters, which can render as missing
+        glyphs in some PDF viewers/printers)."""
+        d = Drawing(width, height)
+        d.add(Rect(0, 0, width, height, fillColor=TRACK, strokeColor=None))
+        filled = width * max(0, min(100, pct)) / 100
+        if filled > 0:
+            d.add(Rect(0, 0, filled, height, fillColor=PRIMARY, strokeColor=None))
+        return d
 
     def heading(text):
         story.append(Paragraph(text.upper(), heading_style))
@@ -318,14 +331,18 @@ def build_pdf(data: dict, output_path: Path) -> None:
         heading("Skills")
         rows = []
         for name, pct in data["skills"]:
-            bar = "\u2588" * (pct // 5) + " " + str(pct) + "%"
-            rows.append([Paragraph(name, skill_style), Paragraph(bar, bar_style)])
-        skill_table = Table(rows, colWidths=[70 * mm, 94 * mm])
+            rows.append([
+                Paragraph(name, skill_style),
+                skill_bar(pct),
+                Paragraph(f"{pct}%", pct_style),
+            ])
+        skill_table = Table(rows, colWidths=[65 * mm, 72 * mm, 15 * mm])
         skill_table.setStyle(TableStyle([
             ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
             ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
             ("TOPPADDING", (0, 0), (-1, -1), 3),
             ("LEFTPADDING", (0, 0), (-1, -1), 0),
+            ("RIGHTPADDING", (1, 0), (1, -1), 6),
         ]))
         skill_table.hAlign = "LEFT"
         story.append(skill_table)
