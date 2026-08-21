@@ -280,6 +280,7 @@ def build_pdf(data: dict, output_path: Path) -> None:
             ("TOPPADDING", (0, 0), (-1, -1), 0),
             ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
         ]))
+        t.hAlign = "LEFT"
         block = [t]
         if company:
             block.append(Paragraph(company, company_style))
@@ -326,6 +327,7 @@ def build_pdf(data: dict, output_path: Path) -> None:
             ("TOPPADDING", (0, 0), (-1, -1), 3),
             ("LEFTPADDING", (0, 0), (-1, -1), 0),
         ]))
+        skill_table.hAlign = "LEFT"
         story.append(skill_table)
         story.append(Spacer(1, 6))
 
