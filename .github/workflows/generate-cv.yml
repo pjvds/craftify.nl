@@ -1,0 +1,56 @@
+name: Generate CV PDF
+
+# Builds a reproducible Docker image (scripts/Dockerfile) that parses
+# index.html and renders a CV PDF, then publishes it as a GitHub Release
+# asset.
+
+on:
+  push:
+    branches: ["master"]
+    paths:
+      - "index.html"
+      - "scripts/**"
+      - ".github/workflows/generate-cv.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "cv-release"
+  cancel-in-progress: false
+
+jobs:
+  generate-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build CV generator image
+        run: docker build -t craftify-cv-generator -f scripts/Dockerfile scripts
+
+      - name: Generate CV PDF
+        run: |
+          mkdir -p dist
+          docker run --rm \
+            -v "${{ github.workspace }}":/workspace \
+            -v "${{ github.workspace }}/dist":/output \
+            craftify-cv-generator
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: dist/*.pdf
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: cv-latest
+          name: "CV (auto-generated)"
+          body: |
+            Automatically generated CV PDF, rendered from the content on
+            [craftify.nl](https://craftify.nl) as of commit ${{ github.sha }}.
+          make_latest: true
+          files: dist/*.pdf
